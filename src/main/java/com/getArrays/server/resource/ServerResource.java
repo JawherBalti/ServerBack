@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static com.getArrays.server.enumeration.Status.SERVER_UP;
 import static java.time.LocalDateTime.now;
@@ -95,6 +96,7 @@ public class ServerResource {
 
     @GetMapping(path="/image/{fileName}", produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getServerImage(@PathVariable("fileName") String fileName) throws IOException {
-        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "/Downloads/images/" + fileName));
+//        C:\Users\infosat\Desktop\sererManagement\ServerBack\src\main\java\com\getArrays\server\resource\images
+        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "/Desktop/sererManagement/ServerBack/src/main/java/com/getArrays/server/resource/images/" + fileName));
     }
 }

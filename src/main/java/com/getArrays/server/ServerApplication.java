@@ -20,14 +20,14 @@ public class ServerApplication {
 		SpringApplication.run(ServerApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner run (ServerRepo serverRepo) {
-		return  args -> {
-			serverRepo.save(new Server(null, "192.168.1.3", "Ubuntu", "16GB", "PC", "http://localhost;8080/server/image/server1.png", Status.SERVER_UP));
-			serverRepo.save(new Server(null, "192.168.1.1", "Centos", "16GB", "PC", "http://localhost;8080/server/image/server1.png", Status.SERVER_DOWN));
-
-		};
-	}
+//	@Bean
+//	CommandLineRunner run (ServerRepo serverRepo) {
+//		return  args -> {
+//			serverRepo.save(new Server(null, "192.168.1.3", "Ubuntu", "16GB", "PC", "http://localhost;8080/server/image/server1.png", Status.SERVER_UP));
+//			serverRepo.save(new Server(null, "192.168.1.1", "Centos", "16GB", "PC", "http://localhost;8080/server/image/server1.png", Status.SERVER_DOWN));
+//
+//		};
+//	}
 	
 	@Bean
 	public CorsFilter corsFilter() {
@@ -41,5 +41,4 @@ public class ServerApplication {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
-
 }
